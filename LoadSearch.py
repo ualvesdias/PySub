@@ -8,5 +8,5 @@ class LoadSearch():
 
 	def loadFile(self):
 		with open(self.file,'r') as subfile:
-			[self.subqueue.put((sub+'.'+self.domain).strip()) for sub in subfile.readlines()] # .replace('\n','')
+			[self.subqueue.put(sub.strip()+'.'+self.domain) for sub in subfile.readlines()] # .replace('\n','')
 		return self.subqueue
